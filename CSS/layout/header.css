@@ -1,0 +1,58 @@
+/*Parte del logo y nombre*/
+#personal_brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+}
+
+#logo {
+
+    height: 40px;
+    margin: 3px;
+    padding-right: 25px;
+}
+
+/*Parte del menu*/
+.presentacion {
+    background-color: #1A1A1A;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-align: center;
+}
+
+.items_menu a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 14px;
+    font-size: 17px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.items_menu a:hover {
+    border-bottom: #C19F38 1px solid;
+    color: #C19F38;
+    transition: 0.40s;
+}
