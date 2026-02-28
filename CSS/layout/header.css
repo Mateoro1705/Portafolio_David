@@ -14,7 +14,9 @@
 
 /*Parte del menu*/
 .presentacion {
-    background-color: #000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-around;
     align-items: center;
