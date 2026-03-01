@@ -1,9 +1,10 @@
 footer {
     background-color: #1A1A1A;
-    height: auto;
-    width: auto;
     padding: 30px 0;
     margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 footer ul {
@@ -24,4 +25,8 @@ footer .items_menu {
 
 .submenu li {
     margin: 8px 0;
+}
+
+#logo_footer {
+    width: 150px;
 }

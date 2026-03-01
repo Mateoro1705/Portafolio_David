@@ -140,18 +140,6 @@ aside {
     position: relative;
 }
 
-/* Efecto fade en los bordes (suaviza la entrada/salida) */
-.slider::before,
-.slider::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 80px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
 .slider::before {
     left: 0;
     background: linear-gradient(to right, #0f0f0f, transparent);
@@ -171,13 +159,7 @@ aside {
     will-change: transform;
 }
 
-/* Pausa al pasar el mouse */
-.slider:hover .slider-track {
-    animation-play-state: paused;
-}
-
 /* CADA SLIDE */
-
 .slide {
     width: 120px;
     margin-right: 20px;
