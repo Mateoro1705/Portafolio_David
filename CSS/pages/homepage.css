@@ -224,9 +224,6 @@ aside {
     border: #000 solid 1px;
     object-fit: cover;
     transition: all 0.3s ease;
-    -webkit-box-shadow: 5px 5px 9px 1px rgba(193, 159, 56, 1);
-    -moz-box-shadow: 5px 5px 9px 1px rgba(193, 159, 56, 1);
-    caja-sombra: 5px 5px 9px 1px rgba(193, 159, 56, 1);
 }
 
 .img_Projects:hover {

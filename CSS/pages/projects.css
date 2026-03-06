@@ -12,13 +12,51 @@ body {
     line-height: 1.6;
 }
 
+/*Esta es la parte del carrusel*/
+.carrusel {
+    width: 100%;
+    max-width: 1200px;
+    height: 450px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+/* Asegurar que el carrusel y las imágenes ocupen todo el espacio */
+.carrusel .carousel,
+.carrusel .carousel-inner,
+.carrusel .carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titles {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.paragraph {
+    text-align: center;
+    color: #ddd;
+    max-width: 600px;
+
+}
+
 /*Parte del slide*/
 .slider {
     width: 60vw;
     overflow: hidden;
-    margin: 50px auto;
+    margin: 30px auto;
     border-radius: 15px;
-    padding: 45px 0;
+    padding-bottom: 40px;
     position: relative;
 }
 
@@ -37,7 +75,6 @@ body {
     display: flex;
     width: fit-content;
     animation: scroll 35s linear infinite;
-    /* Más lento y suave */
     will-change: transform;
 }
 
@@ -83,6 +120,18 @@ body {
     }
 }
 
+/*Parte de las cards usando Bootstrap*/
+.card {
+    width: 350px;
+    height: 100px;
+}
+
+.card-img {
+    width: 350px;
+    height: auto;
+}
+
+
 
 
 /* parte de los proyectos */
@@ -96,19 +145,6 @@ body {
     gap: 15px;
 }
 
-
-.titles {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.paragraph {
-    text-align: center;
-    color: #ddd;
-    max-width: 600px;
-    margin-bottom: 40px;
-}
 
 /* Contenedor de todas las cards*/
 .items_card {
@@ -161,6 +197,7 @@ body {
     font-size: 13px;
     color: #aaa;
 }
+
 
 /*botones de las cards*/
 .buttons {
