@@ -16,13 +16,12 @@
 .presentacion {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -34,7 +33,7 @@
 
     z-index: 1000;
     box-shadow: 0 2px 8px hsla(0, 4%, 69%, 0.8);
-    border-radius: 0 0 15px 15px;
+    border-radius: 20px;
     transition: box-shadow 0.4s ease, transform 0.3s ease;
 
 }

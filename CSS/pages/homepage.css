@@ -134,9 +134,8 @@ aside {
 .slider {
     width: 60vw;
     overflow: hidden;
-    margin: 50px auto;
     border-radius: 15px;
-    padding: 45px 0;
+    padding: 40px 125px;
     position: relative;
 }
 
@@ -148,6 +147,24 @@ aside {
 .slider::after {
     right: 0;
     background: linear-gradient(to left, #0f0f0f, transparent);
+    content: '';
+    position: absolute;
+    top: 0;
+    border-radius: 15px;
+    /* Alineado a la derecha */
+    width: 20%;
+    /* Cubre la mitad */
+    height: 85%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
 }
 
 /* TRACK */
@@ -162,7 +179,6 @@ aside {
 /* CADA SLIDE */
 .slide {
     width: 120px;
-    margin-right: 20px;
     text-align: center;
 }
 
