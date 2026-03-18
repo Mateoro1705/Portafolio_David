@@ -26,23 +26,29 @@ body {
 }
 
 /* parte de la descripcion*/
-#about_me {
+.about_me {
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     gap: 40px;
-    padding: 120px 80px;
+    padding: 150px 80px;
     flex-wrap: wrap;
 }
 
-.perfil {
-    background-color: #000;
+.about_profile {
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #000;
     margin: 45px;
     padding: 30px;
     border-radius: 15px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
     box-shadow: 0 10px 20px rgba(193, 159, 56, 0.8);
 }
 
@@ -59,12 +65,12 @@ body {
     color: #fff;
 }
 
-.descripcion p {
+.about_content p {
     max-width: 900px;
     font-size: 18px;
 }
 
-.descripcion h1 {
+.about_content h1 {
     font-size: 30px;
     color: #fff;
     overflow: hidden;
@@ -79,11 +85,11 @@ span {
 }
 
 
-.descripcion span {
+.about_content span {
     color: #C19F38;
 }
 
-.descripcion p {
+.about_content p {
     margin-top: 15px;
     color: #ddd;
 }
@@ -160,10 +166,12 @@ aside {
 }
 
 .skills {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    padding-bottom: 80px;
 
 }
 
@@ -252,7 +260,7 @@ aside {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 
 }
 
@@ -315,6 +323,14 @@ aside {
     border: #fff 1px solid;
     transition: 0.6s;
 }
+
+/*Otro */
+
+
+
+
+
+
 
 /* ========== RESPONSIVE ========== */
 
