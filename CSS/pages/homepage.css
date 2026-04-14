@@ -25,103 +25,115 @@ body {
     margin-bottom: 40px;
 }
 
-/* parte de la descripcion*/
+/* ---- parte de la descripcion ----*/
+
+/* CONTENEDOR */
 .about {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 40px;
-    padding: 150px 80px;
-    flex-wrap: wrap;
+    width: 95%;
+    height: 650px;
+    margin: 150px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+
+    /* Desvanecido suave arriba y abajo */
+    mask-image: linear-gradient(to bottom,
+            transparent 10%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
 }
 
-.about_profile {
-    width: auto;
+/* Imagen blur (bordes) */
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/Images/Presentacion mateo.png") center/cover no-repeat;
+
+    filter: blur(25px);
+    transform: scale(1.1);
+    transition: all 0.6s ease;
+
+    z-index: 1;
+}
+
+/* Imagen normal */
+.about::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/Images/Presentacion mateo.png") center/cover no-repeat;
+    transition: transform 0.6s ease;
+    z-index: 2;
+}
+
+/* HOVER 🔥 */
+.about:hover::before {
+    filter: blur(35px);
+    transform: scale(1.15);
+}
+
+.about:hover::after {
+    transform: scale(1.05);
+}
+
+/* CONTENIDO GLASS */
+.about_content {
+    position: relative;
+    z-index: 3;
+    margin: 340px 0 0 550px;
+
+    max-width: 1250px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #000;
-    margin: 45px;
-    padding: 30px;
+    justify-content: center;
+
+    padding: 40px;
+
+    color: #fff;
+
+    /* GLASSMORPHISM */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 15px;
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-    box-shadow: 0 10px 20px rgba(193, 159, 56, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* Animación entrada */
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
 }
 
-#flotante {
-    border-radius: 50%;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    animation: flotante 3s ease-in-out infinite;
-}
-
-.perfil h1 {
-    font-size: 22px;
-    text-align: center;
-    color: #fff;
-}
-
-.about_content p {
-    max-width: 900px;
-    font-size: 18px;
-}
-
+/* TEXTO */
 .about_content h1 {
-    font-size: 30px;
-    color: #fff;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    animation: typing 3s steps(30, end);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
-
-
-span {
-    color: #C19F38;
-}
-
 
 .about_content span {
-    color: #C19F38;
+    color: #000;
+    font-weight: bold;
 }
 
 .about_content p {
-    margin-top: 15px;
-    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Animaciones*/
-@keyframes flotante {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(20px);
-    }
-}
-
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 90%;
-    }
-}
-
+/* ANIMACIÓN */
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
 
     to {
@@ -130,13 +142,31 @@ span {
     }
 }
 
-section,
-aside {
-    animation: fadeUp 2s ease;
+
+@media (max-width: 768px) {
+    .about {
+        width: 95%;
+        height: auto;
+        margin: 100px auto;
+    }
+
+    .about_content {
+        padding: 20px;
+        margin: 300px 20px 0 20px;
+    }
+
+    .about_content h1 {
+        font-size: 1.8rem;
+    }
+
+    .about_content p {
+        font-size: 0.95rem;
+    }
 }
 
-/*Parte del slide*/
-/* CONTENEDOR PRINCIPAL */
+
+/*---- Parte del slide de las skills ----*/
+
 .skills {
     width: 100%;
     display: flex;
@@ -176,8 +206,6 @@ aside {
 }
 
 
-
-/* TRACK */
 .slider-track {
     display: flex;
     width: fit-content;
@@ -186,13 +214,11 @@ aside {
     will-change: transform;
 }
 
-/* CADA SLIDE */
 .skills_item {
     width: 120px;
     text-align: center;
 }
 
-/* IMÁGENES */
 .skills_item img {
     width: 80px;
     height: 80px;
@@ -206,7 +232,6 @@ aside {
     filter: brightness(1.1);
 }
 
-/* TEXTO */
 .skills_item h3 {
     color: white;
     margin-top: 10px;
@@ -278,12 +303,6 @@ aside {
     border-radius: 15px;
 }
 
-/*-----------------*/
-
-
-
-
-/*--------------------*/
 .projects_buttons {
     display: flex;
     justify-content: space-around;
@@ -317,8 +336,6 @@ aside {
     backdrop-filter: blur(8px);
     z-index: 1;
 }
-
-
 
 .super-button::before {
     content: "";
@@ -367,8 +384,6 @@ aside {
     }
 }
 
-
-
 /* ========== RESPONSIVE ========== */
 
 @media (max-width: 1024px) {
@@ -382,8 +397,15 @@ aside {
     }
 
     .about_content p {
+        text-align: left;
         font-size: 16px;
         max-width: 100%;
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
     }
 
     .skills_slider {
@@ -401,7 +423,8 @@ aside {
     }
 
     .projects_image {
-        width: 320px;
+        width: 250px;
+
     }
 }
 
