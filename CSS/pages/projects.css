@@ -9,6 +9,7 @@
 body {
     background-color: #000;
     color: #C19F38;
+    font-family: "Montserrat", sans-serif;
     line-height: 1.6;
 }
 
@@ -107,186 +108,110 @@ body {
 }
 
 
-/* Contenedor de todas las cards*/
-.cards {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columnas */
-    gap: 35px;
+/* CONTENEDOR PRINCIPAL */
+.projects-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding-top: 100px;
+    gap: 15px;
 }
 
+/* TITULOS */
+.titles {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
 
-/*Css nuevo*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.paragraph {
+    text-align: center;
+    color: #ddd;
+    max-width: 600px;
+}
 
-.card {
-    --bg: #fff;
-    --title-color: #fff;
-    --title-color-hover: #000;
-    --text-color: #666;
-    --button-color: #eee;
-    --button-color-hover: #ddd;
-    background: var(--bg);
-    border-radius: 2rem;
-    padding: 0.4rem;
-    width: 20rem;
-    height: 30rem;
-    overflow: clip;
-    position: relative;
-    font-family: Lato, Montserrat, Helvetica, Arial, sans-serif;
+/* CONTENEDOR DE CARDS*/
+.projects-cards .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
 
-    &.dark {
-        --bg: #222;
-        --title-color: #fff;
-        --title-color-hover: #fff;
-        --text-color: #ccc;
-        --button-color: #555;
-        --button-color-hover: #444;
-    }
+/* CARD */
+.card-dark {
+    background-color: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    width: 300px;
+    height: auto;
+}
 
-    &::before {
-        content: "";
-        position: absolute;
-        width: calc(100% - 1rem);
-        height: 30%;
-        bottom: 0.5rem;
-        left: 0.5rem;
-        mask: linear-gradient(#0000, #000f 80%);
-        backdrop-filter: blur(1rem);
-        border-radius: 0 0 1.5rem 1.5rem;
-        translate: 0 0;
-        transition: translate 0.25s;
-    }
+.card-dark:hover {
+    transform: translateY(-9px);
+    transition: 0.6s;
+    box-shadow: 10px 10px 12px -3px rgba(193, 159, 56, 0.75);
+    -webkit-box-shadow: 10px 10px 12px -3px rgba(193, 159, 56, 0.75);
+    -moz-box-shadow: 10px 10px 12px -3px rgba(193, 159, 56, 0.75);
+}
 
-    >img {
-        max-width: 100%;
-        aspect-ratio: 2 / 3;
-        object-fit: cover;
-        object-position: 50% 5%;
-        border-radius: 1.5rem;
-        display: block;
-        transition: aspect-ratio 0.25s, object-position 0.5s;
-        /* firefox patch */
-        width: 100%;
-        height: auto;
-    }
+/* IMAGEN */
+.image_project {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
 
-    >section {
-        margin: 1rem;
-        height: calc(33.3333% - 1rem);
-        display: flex;
-        flex-direction: column;
+/* INFO */
+.info-card {
+    padding: 10px 10px 30px;
+    font-size: 14px;
+    color: #fff;
+}
 
-        h2 {
-            margin: 0;
-            margin-block-end: 1rem;
-            font-size: 1.5rem;
-            opacity: 0;
-            translate: 0 -200%;
-            opacity: 1;
-            color: var(--title-color);
-            transition: color 0.5s, margin-block-end 0.25s, opacity 1s, translate 0.25s;
-        }
+.info-card h2 {
+    text-align: center;
+    color: #C19F38;
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
 
-        p {
-            font-size: 0.95rem;
-            line-height: 1.3;
-            color: var(--text-color);
-            opacity: 0;
-            margin: 0;
-            translate: 0 100%;
-            transition: margin-block-end 0.25s, opacity 1s 0.2s, translate 0.25s 0.2s;
-        }
+.info-card p {
+    text-align: center;
+    margin: 4px 0;
+}
 
-        >div {
-            align-items: flex-end;
-            display: flex;
-            justify-content: center;
-            opacity: 0;
-            transition: translate 0.25s 0.2s, opacity 1s;
+.info-project {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    padding-top: 10px;
+}
 
+/* BOTON */
+.info-project button {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #111;
+    color: #111;
+    margin-top: 15px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+}
 
-            button {
-                border: 1px solid #0000;
-                border-radius: 1.25rem 1.25rem 1.5rem 1.25rem;
-                font-size: 1rem;
-                padding: 1rem 1.5rem 1rem 1.5rem;
-                translate: 1rem;
-                background: var(--button-color);
-                transition: background 0.33s;
-                outline-offset: 2px;
-                position: relative;
-                color: var(--title-color-hover);
-                /* specific to demo */
-                width: 8.2rem;
-                text-align: right;
-
-                &::before,
-                &::after {
-                    content: "";
-                    width: 0.85rem;
-                    height: 0.1rem;
-                    background: currentcolor;
-                    position: absolute;
-                    top: 50%;
-                    left: 1.33rem;
-                    border-radius: 1rem;
-                }
-
-                &::after {
-                    rotate: 90deg;
-                    transition: rotate 0.15s;
-                }
-
-                &.following {
-                    &::after {
-                        rotate: 0deg;
-                    }
-                }
-
-                &:hover {
-                    background: var(--button-color-hover);
-                }
-
-                &:focus {
-                    outline: 2px solid var(--text-color);
-                }
-            }
-        }
-    }
-
-    &:hover,
-    &:focus-within {
-        &::before {
-            translate: 0 100%;
-        }
-
-
-        >img {
-            aspect-ratio: 1 / 1;
-            object-position: 50% 10%;
-            transition: aspect-ratio 0.25s, object-position 0.25s;
-        }
-
-        >section {
-
-            h2,
-            p {
-                translate: 0 0;
-                margin-block-end: 0.5rem;
-                opacity: 1;
-            }
-
-            h2 {
-                color: var(--title-color-hover);
-            }
-
-            >div {
-                translate: 0 0;
-                opacity: 1;
-                transition: translate 0.25s 0.25s, opacity 0.5s 0.25s;
-            }
-        }
-    }
+.info-project button:hover {
+    background: #111;
+    color: #ddd;
 }
